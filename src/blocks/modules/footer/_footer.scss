@@ -154,16 +154,19 @@
 				}
 				a {
 					display: block;
-					position: relative;
-					&::before {
-						content: '';
-						position: absolute;
-						bottom: 0;
-						left: 50%;
-						transform: translate(-50%, 0);
-						width: 5%;
-						height: 0.125vw;
-						background-color: #DB3738;
+					span {
+						display: inline-block;
+						position: relative;
+						&::after {
+							content: '';
+							position: absolute;
+							bottom: 0;
+							left: 50%;
+							transform: translate(-50%, 0);
+							width: 100%;
+							height: 0.125vw;
+							background-color: #DB3738;
+						}
 					}
 				}
 			}
