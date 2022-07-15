@@ -13,7 +13,7 @@
 			padding-bottom: calc((1920px * 10.36vw) / 1728px);
 		}
 		@media (max-width: 768px){
-			padding-top: 16.125vw;
+			padding-top: 20vw;
 			padding-bottom: 0;
 		}
 		&::after{
@@ -302,12 +302,12 @@
 				height: calc((1920px * 500px) / 1728px);
 				position: absolute;
 				z-index: 3;
-				top: calc((1920px * -168px) / 1728px);
+				top: calc((1920px * -90px) / 1728px);
 				right: calc((1920px * -316px) / 1728px);
 				@media (max-width: 1920px){
 					width: calc((1920px * 44vw) / 1728px);
 					height: calc((1920px * 26.04vw) / 1728px);
-					top: calc((1920px * -8.75vw) / 1728px);
+					top: calc((1920px * -5.75vw) / 1728px);
 					right: calc((1920px * -16.46vw) / 1728px);
 				}
 				@media (max-width: 768px){

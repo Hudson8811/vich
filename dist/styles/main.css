@@ -515,6 +515,7 @@ h6 {
 
 .wrapper {
   overflow: hidden;
+  position: relative;
 }
 
 .container {
@@ -542,11 +543,30 @@ h6 {
 }
 
 .header {
-  position: relative;
-  z-index: -2;
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 0;
-  background: #ffffff;
+  height: 94.4444444444px;
+  padding-top: 40px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header__container img:nth-child(1) {
+  width: 372.2222222222px;
+  height: 94.4444444444px;
+}
+
+.header__container img:nth-child(2) {
+  width: 287.7777777778px;
+  height: 64.4444444444px;
+  margin-left: 52.2222222222px;
 }
 
 .footer {
@@ -644,6 +664,116 @@ h6 {
 .footer__icon img {
   width: 100%;
   height: 100%;
+}
+
+.footer__popap-btn {
+  width: 366.6666666667px;
+  height: 68.8888888889px;
+  font-family: "Geometria";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 143.2%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FE142C;
+  border: 1px solid #FE142C;
+  margin: 0 auto;
+  margin-top: 57.7777777778px;
+}
+
+.fancybox__content {
+  padding: 0 !important;
+}
+
+.popap {
+  display: none;
+  width: 755.5555555556px;
+  max-width: 100%;
+  padding: 23.3333333333px 0 11.1111111111px !important;
+}
+
+.popap__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popap__title {
+  font-family: "Geometria";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 31.1111111111px;
+  line-height: 38.8888888889px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #DB3738;
+}
+
+.popap__items {
+  margin-top: 11.1111111111px;
+}
+
+.popap__item {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.popap__item:not(:first-child) {
+  margin-top: 16.6666666667px;
+}
+
+.popap__pos {
+  font-family: "Geometria";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 106%;
+  color: #000000;
+}
+
+.popap__name {
+  font-family: "Geometria";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 106%;
+  color: #000000;
+  margin-left: 5.5555555556px;
+}
+
+.popap__footer {
+  font-family: "Geometria";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 173%;
+  text-align: center;
+  color: #000000;
+  margin-top: 22.2222222222px;
+}
+
+.popap .carousel__button.is-close {
+  position: absolute;
+  top: 20px !important;
+  right: 20px !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.popap .carousel__button.is-close svg {
+  width: 100%;
+  height: 100%;
+}
+
+.popap .carousel__button.is-close svg path {
+  width: 100%;
+  height: 100%;
+  fill: #A8E0D4;
+  stroke: #A8E0D4;
 }
 
 .hero {
@@ -810,7 +940,7 @@ h6 {
   height: 555.5555555556px;
   position: absolute;
   z-index: 3;
-  top: -186.6666666667px;
+  top: -100px;
   right: -351.1111111111px;
 }
 
@@ -852,7 +982,7 @@ h6 {
 }
 
 .questions__btn-slide:hover {
-  opacity: 0.7;
+  background-color: #aaaaaa;
 }
 
 .questions__btn-slide-prev {
@@ -873,6 +1003,7 @@ h6 {
 
 .questions__slide .slide-container {
   transform-style: preserve-3d;
+  position: relative;
 }
 
 .questions__slide .slide-container .front-slide__btn-yes.btn1.active,
@@ -902,11 +1033,15 @@ h6 {
 .questions__slide .slide-container.active .front-slide {
   transform: rotateY(180deg);
   position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .questions__slide .slide-container.active .back-slide {
   transform: rotateY(0deg);
   position: relative;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .questions__slide .btn {
@@ -938,9 +1073,12 @@ h6 {
 .front-slide {
   transform: rotateY(0deg);
   position: relative;
-  backface-visibility: hidden;
+  /* 	backface-visibility: hidden;
+   */
   transition: all 0.7s ease 1s;
   width: 100%;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .front-slide__card {
@@ -1047,13 +1185,16 @@ h6 {
 
 .back-slide {
   transform: rotateY(180deg);
-  backface-visibility: hidden;
+  /* 	backface-visibility: hidden;
+   */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   transition: all 0.7s ease 1s;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .back-slide__card {
@@ -1077,7 +1218,7 @@ h6 {
 }
 
 .back-slide__text {
-  max-width: 902.2222222222px;
+  max-width: 933.3333333333px;
   padding-top: 64.4444444444px;
   margin-top: 22.2222222222px;
   font-family: "Geometria";
@@ -1946,7 +2087,19 @@ padding: calc((1920px * 30px) / 1728px) calc((1920px * 30px) / 1728px) calc((192
   }
 
   .header {
-    height: 0;
+    height: 4.9188888889vw;
+    padding-top: 2.0833333333vw;
+  }
+
+  .header__container img:nth-child(1) {
+    width: 19.3866666667vw;
+    height: 4.9188888889vw;
+  }
+
+  .header__container img:nth-child(2) {
+    width: 14.9888888889vw;
+    height: 3.3566666667vw;
+    margin-left: 2.72vw;
   }
 
   .footer {
@@ -1990,6 +2143,52 @@ padding: calc((1920px * 30px) / 1728px) calc((1920px * 30px) / 1728px) calc((192
   .footer__icon {
     width: 4.4444444444vw;
     height: 4.4444444444vw;
+  }
+
+  .footer__popap-btn {
+    width: 19.0977777778vw;
+    height: 3.5877777778vw;
+    font-size: 1.0422222222vw;
+    margin-top: 3.0088888889vw;
+  }
+
+  .popap {
+    width: 39.3522222222vw;
+    padding: 1.2155555556vw 0 0.5788888889vw !important;
+  }
+
+  .popap__title {
+    font-size: 1.62vw;
+    line-height: 2.0255555556vw;
+  }
+
+  .popap__items {
+    margin-top: 0.5788888889vw;
+  }
+
+  .popap__item:not(:first-child) {
+    margin-top: 0.8677777778vw;
+  }
+
+  .popap__pos {
+    font-size: 1.0422222222vw;
+  }
+
+  .popap__name {
+    font-size: 1.0422222222vw;
+    margin-left: 0.2888888889vw;
+  }
+
+  .popap__footer {
+    margin-top: 1.1577777778vw;
+    font-size: 0.573vw;
+  }
+
+  .popap .carousel__button.is-close {
+    top: 1.042vw !important;
+    right: 1.042vw !important;
+    width: 1.458vw !important;
+    height: 1.458vw !important;
   }
 
   .hero__container {
@@ -2080,7 +2279,7 @@ padding: calc((1920px * 30px) / 1728px) calc((1920px * 30px) / 1728px) calc((192
   .hero__wave {
     width: 48.8888888889vw;
     height: 28.9333333333vw;
-    top: -9.7222222222vw;
+    top: -6.3888888889vw;
     right: -18.2888888889vw;
   }
 
@@ -2514,7 +2713,19 @@ padding: calc((1920px * 30px) / 1728px) calc((1920px * 30px) / 1728px) calc((192
   }
 
   .header {
-    height: 4.75vw;
+    padding-top: 3.385vw;
+    height: 3.698vw;
+  }
+
+  .header__container img:nth-child(1) {
+    width: 35.125vw;
+    height: 9vw;
+  }
+
+  .header__container img:nth-child(2) {
+    width: 27.125vw;
+    height: 6vw;
+    margin-left: 5vw;
   }
 
   .footer {
@@ -2620,12 +2831,38 @@ padding: calc((1920px * 30px) / 1728px) calc((1920px * 30px) / 1728px) calc((192
     height: 9.5vw;
   }
 
+  .footer__popap-btn {
+    width: 55.097778vw;
+    height: 8.587778vw;
+    font-size: 4.042222vw;
+    margin-top: 9.008889vw;
+  }
+
+  .popap {
+    width: 90vw;
+  }
+
+  .popap__pos {
+    font-size: 2vw;
+    line-height: 150%;
+  }
+
+  .popap__name {
+    font-size: 2vw;
+    line-height: 150%;
+  }
+
+  .popap__footer {
+    font-size: 2vw;
+    line-height: 150%;
+  }
+
   .hero {
     overflow: visible;
   }
 
   .hero__container {
-    padding-top: 16.125vw;
+    padding-top: 20vw;
     padding-bottom: 0;
   }
 
